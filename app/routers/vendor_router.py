@@ -15,7 +15,7 @@ def get_db():
     finally:
         db.close()
 
-@router.get("/convention-requests")
+@router.get("/")
 def read_convention_requests(db: Session = Depends(get_db)):
     requests = get_all_convention_requests(db)
     return requests
