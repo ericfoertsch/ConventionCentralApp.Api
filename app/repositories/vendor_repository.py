@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.models.vendor import ConventionRequest
+from app.models.vendor import VendorRequest
 
-def get_all_convention_requests(db: Session):
-    return db.query(ConventionRequest).all()
+def get_all_vendors(db: Session):
+    return db.query(VendorRequest).all()
