@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from app.db import SessionLocal
 from app.repositories.event_repository import get_event_settings, get_event
 from app.repositories.vendor_repository import get_all_vendors
-from app.models.event.event_settings import EventSettings
 from app.models.event.event import Event
 
 router = APIRouter(
