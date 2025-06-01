@@ -4,6 +4,7 @@ from app.models.event.event_metrics import EventMetrics
 
 class Event(BaseModel):
     event_id: int
+    name: str
     settings: EventSettings
     metrics: EventMetrics
 

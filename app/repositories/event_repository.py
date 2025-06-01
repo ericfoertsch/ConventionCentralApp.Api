@@ -9,4 +9,4 @@ def get_event(event_id: int) -> Event:
     settings = EventSettings(vendor_cost=300.00)
     metrics = EventMetrics(vendor_count=0, income=0.00)
 
-    return Event(event_id=event_id, settings=settings, metrics=metrics)
+    return Event(event_id=event_id, name="JAFAX", settings=settings, metrics=metrics)
