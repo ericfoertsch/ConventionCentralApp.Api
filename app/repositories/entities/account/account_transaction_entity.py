@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, Text, Double, TIMESTAMP
 from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from app.repositories.entities.base import Base
 
 class AccountTransactionEntity(Base):
     __tablename__ = 'transaction'

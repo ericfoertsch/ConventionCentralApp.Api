@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from app.models.account.account import Account
-from app.repositories.entities.account.account import AccountIdEntity
+from app.repositories.entities.account.account_id_entity import AccountIdEntity
 from fastapi import HTTPException, status
 
 def get_account(id_account: int, db: Session) -> Account:
