@@ -1,23 +1,24 @@
 from typing import Optional
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, validator, Field
 from datetime import datetime, timezone
 from app.models.series.convention_series import ConventionSeries
 from app.models.person.person import Person
 
 class Account(BaseModel):
-    id_account: int
-    convention_series: Optional[ConventionSeries]
-    person: Optional[Person]
-    name: str
-    description: str
-    utc_begin: Optional[datetime]
-    utc_end: Optional[datetime]
+    accountId: int = Field(..., alias="id_account")
+    conventionSeries: ConventionSeries = Field(..., alias="convention_series")
+    person: Person = Field(...)
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+    begin: datetime = Field(..., alias="utc_begin")
+    end: Optional[datetime] = Field(None, alias="utc_end")
 
     class Config:
         arbitrary_types_allowed = True
         from_attributes = True
+        validate_by_name = True
 
-    @validator("utc_begin", "utc_end", pre=True)
+    @validator("begin", "end", pre=True)
     def make_datetime_timezone_aware(cls, v):
         if v is None:
             return None

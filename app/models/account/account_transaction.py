@@ -22,7 +22,7 @@ class AccountTransaction(BaseModel):
     # class Config:
     #     arbitrary_types_allowed = True
     #     from_attributes = True
-    #     allow_population_by_field_name = True
+    #     validate_by_name = True
 
     # @validator("timestamp", pre=True)
     # def ensure_utc_timezone(cls, v):
