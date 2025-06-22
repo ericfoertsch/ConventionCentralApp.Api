@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Text, ForeignKey, TIMESTAMP
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+
 from app.repositories.entities.base import Base
 from app.repositories.entities.person.person_id_entity import PersonIdEntity
 
