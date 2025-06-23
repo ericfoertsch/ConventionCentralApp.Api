@@ -8,9 +8,9 @@ class ConventionIdEntity(Base):
     __tablename__ = 'id'
     __table_args__ = {'schema': 'convention'}
 
+    id_convention = Column(Integer, primary_key=True)
     description = Column(Text)
     email = Column(Text)
-    id_convention = Column(Integer, primary_key=True)
     id_convention_series = Column(Integer, ForeignKey('convention.series.id_convention_series'))
     id_image = Column(Integer)
     id_person = Column(Integer)

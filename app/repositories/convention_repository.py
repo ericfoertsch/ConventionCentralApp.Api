@@ -6,11 +6,11 @@ from sqlalchemy.orm import Session
 from app.models.convention.convention import Convention
 from app.repositories.entities.convention.convention_id_entity import ConventionIdEntity
 
-def get_all_conventions(db: Session) -> List[Convention]:
+def query_all_conventions(db: Session) -> List[Convention]:
     entities = db.query(ConventionIdEntity).all()
     return [Convention.model_validate(e) for e in entities]
 
-def get_convention(conventionId: int, db: Session) -> Convention:
+def query_convention(conventionId: int, db: Session) -> Convention:
     entity = db.query(ConventionIdEntity).filter(
         ConventionIdEntity.id_convention == conventionId
     ).first()
