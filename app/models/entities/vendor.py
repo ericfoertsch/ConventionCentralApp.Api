@@ -18,4 +18,4 @@ class VendorRequest(Base):
     link = Column(String(500), nullable=True)
     name = Column(String(500), nullable=False)
     requests_open = Column(Boolean, nullable=True)
-    utc_timestamp = Column(DateTime, nullable=False)
+    utc_begin = Column(DateTime, nullable=False)
