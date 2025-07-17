@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class VendorRequest(Base):
+class VendorIdEntity(Base):
     __tablename__ = 'id'
     __table_args__ = {'schema': 'vendor'}
 
