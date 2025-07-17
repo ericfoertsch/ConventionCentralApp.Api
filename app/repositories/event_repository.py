@@ -5,8 +5,6 @@ from app.models.event.event import Event
 def get_event_settings(event_id: int) -> EventSettings:
     return EventSettings(event_id=event_id, vendor_cost=300.00)
 
-#def get_all_event_series():
-
 def get_event(event_id: int) -> Event:
     settings = EventSettings(vendor_cost=300.00)
     metrics = EventMetrics(vendor_count=0, income=0.00)
