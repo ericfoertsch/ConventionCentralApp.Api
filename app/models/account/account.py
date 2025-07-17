@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, validator, Field
 from datetime import datetime, timezone
-from app.models.series.convention_series import ConventionSeries
+from app.models.convention.convention_series import ConventionSeries
 from app.models.person.person import Person
 
 class Account(BaseModel):

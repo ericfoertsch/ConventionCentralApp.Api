@@ -6,17 +6,17 @@ from pydantic import BaseModel, Field, validator
 from app.models.person.person import Person
 
 class ConventionSeries(BaseModel):
+    conventionSeriesId: int = Field(..., alias="id_convention_series")
+    name: str = Field(...)
+    timestamp: datetime = Field(..., alias="utc_timestamp")
     description: Optional[str] = Field(None)
     email: Optional[str] = Field(None)
-    conventionSeriesId: int = Field(..., alias="id_convention_series")
     imageId: Optional[int] = Field(None, alias="id_image")
-    personId: int = Field(..., alias="id_person")
+    personId: int = Field(..., alias="id_person")  # Required in this version
     videoId: Optional[int] = Field(None, alias="id_video")
     link: Optional[str] = Field(None)
-    name: str = Field(...)
     begin: Optional[datetime] = Field(None, alias="utc_begin")
-    timestamp: datetime = Field(..., alias="utc_timestamp")
-
+    
     person: Optional[Person] = None
 
     class Config:

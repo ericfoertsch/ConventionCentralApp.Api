@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, validator
 
 from app.models.person.person import Person
-from app.models.series.convention_series import ConventionSeries
+from app.models.convention.convention_series import ConventionSeries
 
 class Convention(BaseModel):
     conventionId: int = Field(..., alias="id_convention")
